@@ -90,28 +90,14 @@ MEND's visual direction is a **light-theme, Discord-inspired layout** (clean pan
 **The Mascot / Mirror Pet:** A soft mint-green cloud-shaped blob with a simple minimal face, appearing throughout the app as a recurring companion. Its expression shifts based on the user's real capacity/burnout data — bright and content when capacity is healthy, tired and drooping when overloaded. This is not a decorative icon; it's the app's core answer to "what makes us different."
 
 **Key screens**:
-1. **Sign In / Sign Up**
-![Sign In](./stitch_mend_app_design_system/1._sign_in/screen.png)
-2. **Onboarding Behavior Pattern**
-![Onboarding Behavior Pattern](./stitch_mend_app_design_system/3._onboarding_behavior_pattern/screen.png)
-3. **Check-in ("Pour it out")**
-![Check-in Pour it out](./stitch_mend_app_design_system/5b._check_in_pour_it_out_conversational/screen.png)
-4. **Capacity Assessment**
-![Capacity Assessment](./stitch_mend_app_design_system/6._capacity_assessment/screen.png)
-5. **Add Task - AI Dump and Review**
-![Add Task AI Dump and Review](./stitch_mend_app_design_system/7e._add_task_ai_dump_review/screen.png)
-6. **Day Plan**
-![Day Plan](./stitch_mend_app_design_system/9._day_plan/screen.png)
-7. **Adjustments / Changes**
-![Adjustments / Changes](./stitch_mend_app_design_system/10._adjustments_changes/screen.png)
-8. **Burnout Debt**
-![Burnout Debt](./stitch_mend_app_design_system/11._burnout_debt_trend/screen.png)
-9. **Future You**
-![Future You](./Screenshot.png)
-10. **Calendar Retrospective**
-![Calendar Retrospective](./stitch_mend_app_design_system/13._calendar_retrospective/screen.png)
-11. **Crisis Banner**
-![Crisis Banner](./stitch_mend_app_design_system/14._crisis_banner_overlay/screen.png)
+
+| Sign In / Sign Up | Onboarding Behavior | Check-in ("Pour it out") | Capacity Assessment |
+| :---: | :---: | :---: | :---: |
+| <img src="./stitch_mend_app_design_system/1._sign_in/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/3._onboarding_behavior_pattern/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/5b._check_in_pour_it_out_conversational/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/6._capacity_assessment/screen.png" height="400"> |
+| **Add Task (AI Dump)** | **Day Plan** | **Adjustments / Changes** | **Burnout Debt** |
+| <img src="./stitch_mend_app_design_system/7e._add_task_ai_dump_review/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/9._day_plan/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/10._adjustments_changes/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/11._burnout_debt_trend/screen.png" height="400"> |
+| **Future You** | **Calendar Retrospective** | **Crisis Banner** | |
+| <img src="./Screenshot.png" height="400"> | <img src="./stitch_mend_app_design_system/13._calendar_retrospective/screen.png" height="400"> | <img src="./stitch_mend_app_design_system/14._crisis_banner_overlay/screen.png" height="400"> | |
 
 *(Full design system detail: see `design.md`)*
 
