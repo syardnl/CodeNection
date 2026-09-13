@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEND — Ideation Evolution Mindmap</title>
+<style>
+  :root{
+    --bg:#F7FAF8;
+    --panel:#FFFFFF;
+    --ink:#1C2723;
+    --ink-soft:#5B6B64;
+    --line:#D7E3DC;
+    --accent:#2F6F6B;
+    --accent-soft:#E4F1EE;
+    --dropped:#B9C2BC;
+    --dropped-bg:#F1F3F1;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',Helvetica,Arial,sans-serif;padding:40px 24px 80px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:-0.01em;}
+  .sub{color:var(--ink-soft);font-size:14px;max-width:680px;line-height:1.5;margin-bottom:36px;}
+
+  .branch{margin-bottom:48px;}
+  .branch-title{
+    font-size:15px;font-weight:600;color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .branch-title::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+
+  .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative;}
+  .node{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;min-width:200px;max-width:260px;
+  }
+  .node.dropped{background:var(--dropped-bg);border-color:var(--dropped);opacity:0.75;}
+  .node.dropped h4{text-decoration:line-through;color:var(--ink-soft);}
+  .node.chosen{border-color:var(--accent);background:var(--accent-soft);}
+  .node h4{margin:0 0 6px;font-size:13.5px;}
+  .node p{margin:0;font-size:12px;color:var(--ink-soft);line-height:1.5;}
+  .arrow{color:var(--ink-soft);font-size:20px;flex-shrink:0;}
+
+  .tag{
+    display:inline-block;font-family:'Consolas',monospace;font-size:9px;
+    padding:2px 6px;border-radius:3px;margin-top:6px;color:#fff;background:var(--accent);
+  }
+  .tag.mentor{background:#8A7BAE;}
+
+  footer{margin-top:20px;font-size:11.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>MEND — Ideation Evolution Mindmap</h1>
+  <div class="sub">Not a static idea list — this shows how each core mechanic actually changed shape over the build, and why. Struck-through nodes were dropped; highlighted nodes are what we kept.</div>
+
+  <div class="branch">
+    <div class="branch-title">Branch 1 — Onboarding Personalization</div>
+    <div class="row">
+      <div class="node dropped">
+        <h4>Clinical label grouping</h4>
+        <p>"Which group are you: stress / ADHD / depression?" — felt like a clinical intake form, no clinical basis to back it.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node chosen">
+        <h4>Behavior-pattern question</h4>
+        <p>"When things pile up, what usually happens to you?" — same personalization goal, no labeling. Inspired by Unstuck's pattern-awareness.</p>
+        <span class="tag">CHOSEN · REAL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch">
+    <div class="branch-title">Branch 2 — The Companion / Pet Concept</div>
+    <div class="row">
+      <div class="node dropped">
+        <h4>Normal pet-care loop</h4>
+        <p>Am & Sofea's original idea — feed/water/interact with a virtual pet, separate from the app's actual data.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node chosen">
+        <h4>Mirror Pet</h4>
+        <p>Direct response to Faris's "what's your USP?" challenge. No care actions — pet's expression IS the user's capacity/burnout state, live.</p>
+        <span class="tag">CHOSEN · REAL</span>
+        <span class="tag mentor">Faris Imran</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch">
+    <div class="branch-title">Branch 3 — Check-in Input Method</div>
+    <div class="row">
+      <div class="node dropped">
+        <h4>Emoji/slider only</h4>
+        <p>Original Ground Truth spec — 🙁😰😐 taps for energy/sleep/stress/focus.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <h4>+ Vent/free-text path</h4>
+        <p>Added AI extraction as a second path — closer to how people actually vent (ChatGPT-style habit), Gemini extracts the same signals.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node chosen">
+        <h4>"What are we feeling today?" + SVG icons</h4>
+        <p>Emoji dropped entirely for design consistency (no emoji anywhere in UI). Free-text path kept, reframed away from "journal" per Varsha.</p>
+        <span class="tag">CHOSEN · REAL</span>
+        <span class="tag mentor">Varsha</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch">
+    <div class="branch-title">Branch 4 — Retention Mechanic</div>
+    <div class="row">
+      <div class="node dropped">
+        <h4>Streaks / badges</h4>
+        <p>Common pattern in productivity apps — explicitly rejected early as feeling gamified and shallow.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node chosen">
+        <h4>Mirror Pet + Future You</h4>
+        <p>Retention comes from emotional stakes (seeing your own state reflected) and consequence visibility (tomorrow's capacity), not points.</p>
+        <span class="tag">CHOSEN · REAL</span>
+        <span class="tag mentor">Faris Imran</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch">
+    <div class="branch-title">Branch 5 — AI Safety Boundary</div>
+    <div class="row">
+      <div class="node">
+        <h4>Vent/check-in with AI extraction</h4>
+        <p>User can freely describe how their day is going — risk: could drift into "AI as therapist" territory.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node chosen">
+        <h4>Strict LLM boundary + crisis banner</h4>
+        <p>AI framed only as "a place to say what happened." Severe distress language triggers a hardcoded (non-LLM-judgment) banner to real helplines.</p>
+        <span class="tag">CHOSEN · REAL</span>
+        <span class="tag mentor">Varsha</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch">
+    <div class="branch-title">Branch 6 — Schedule Input (Future Direction)</div>
+    <div class="row">
+      <div class="node dropped">
+        <h4>Real calendar OAuth</h4>
+        <p>Dropped for this build — auth/integration risk not worth absorbing in a 3-week window.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <h4>Mocked calendar + manual/photo entry</h4>
+        <p>What we actually built — seeded calendar for demo, manual grid or photo/PDF upload otherwise.</p>
+        <span class="tag">REAL (mocked calendar)</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <h4>Telegram bot extraction</h4>
+        <p>Suggested by Varsha — forward class-group messages straight into the schedule. Strong idea, not built this round.</p>
+        <span class="tag" style="background:#9AA5A0;">ROADMAP</span>
+        <span class="tag mentor">Varsha</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>Source: mentor sessions (Faris Imran, Varsha) + team ideation logs. See README Section 2.1 for the full considered-ideas table.</footer>
+</div>
+</body>
+</html>

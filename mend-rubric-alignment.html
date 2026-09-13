@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEND — Rubric Alignment</title>
+<style>
+  :root{
+    --bg:#F7FAF8; --panel:#FFFFFF; --ink:#1C2723; --ink-soft:#5B6B64;
+    --line:#D7E3DC; --accent:#2F6F6B; --accent-soft:#E4F1EE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',Helvetica,Arial,sans-serif;padding:40px 24px 80px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  h1{font-size:26px;margin:0 0 6px;}
+  .sub{color:var(--ink-soft);font-size:14px;max-width:680px;line-height:1.5;margin-bottom:32px;}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:20px 22px;
+  }
+  .card.wide{grid-column:1 / -1;}
+  .card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+  .card-head h3{margin:0;font-size:15px;}
+  .weight{
+    font-family:'Consolas',monospace;font-size:20px;font-weight:700;color:var(--accent);
+  }
+  .card ul{margin:0;padding-left:18px;}
+  .card li{font-size:12.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:2px;}
+  .card li b{color:var(--ink);font-weight:600;}
+
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .bar-label{width:150px;font-size:12px;color:var(--ink-soft);flex-shrink:0;}
+  .bar-track{flex:1;background:var(--accent-soft);border-radius:6px;height:20px;position:relative;overflow:hidden;}
+  .bar-fill{background:var(--accent);height:100%;border-radius:6px;}
+  .bar-pct{width:36px;font-family:'Consolas',monospace;font-size:11px;text-align:right;flex-shrink:0;}
+
+  footer{margin-top:20px;font-size:11.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>MEND — Rubric Alignment</h1>
+  <div class="sub">Every rubric category mapped to the specific feature(s) that answer it — so nothing is riding on vibes when judges score us.</div>
+
+  <div class="card wide">
+    <h3 style="margin:0 0 16px;font-size:14px;">Judging Weight Distribution</h3>
+    <div class="bar-row"><div class="bar-label">Ideation</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-pct">25%</div></div>
+    <div class="bar-row"><div class="bar-label">Impact</div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><div class="bar-pct">20%</div></div>
+    <div class="bar-row"><div class="bar-label">Creativity / Novelty</div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><div class="bar-pct">15%</div></div>
+    <div class="bar-row"><div class="bar-label">Feasibility</div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><div class="bar-pct">15%</div></div>
+    <div class="bar-row"><div class="bar-label">Presentation</div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><div class="bar-pct">15%</div></div>
+    <div class="bar-row"><div class="bar-label">Design</div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><div class="bar-pct">10%</div></div>
+    <div class="bar-row"><div class="bar-label">Mentor Sessions</div><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div><div class="bar-pct">7%</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-head"><h3>Ideation</h3><span class="weight">25%</span></div>
+      <ul>
+        <li><b>Ground Truth doc</b> — single locked dataset, all four members design against the same numbers</li>
+        <li><b>Ideation Evolution mindmap</b> — shows dropped ideas + why (clinical labels, pet-care loop, fuzzy logic)</li>
+        <li><b>Mentor-driven pivots</b> documented, not hidden — Mirror Pet exists because of Faris's USP challenge</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Impact</h3><span class="weight">20%</span></div>
+      <ul>
+        <li><b>Burnout Debt</b> — catches sustained overload before it becomes a crisis, not just a single bad day</li>
+        <li><b>Crisis detection banner</b> — hardcoded safety net, real helpline numbers, not left to LLM judgment</li>
+        <li><b>Future You simulation</b> — makes tomorrow's consequence visible today, changes behavior before harm happens</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Creativity / Novelty</h3><span class="weight">15%</span></div>
+      <ul>
+        <li><b>Mirror Pet</b> — no feed/water loop, pet <i>is</i> the burnout data, not a gamified add-on</li>
+        <li>Explicitly rejected streaks/badges — novelty bar was "would a judge have seen this exact idea before?"</li>
+        <li><b>Capacity vs Demand vs Overload</b> — reframes burnout as a math gap, not a vague feeling</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Feasibility</h3><span class="weight">15%</span></div>
+      <ul>
+        <li>Deterministic weighted formula (40/30/20/10) — no AI risk in the core calculation</li>
+        <li>AI scoped to 3 narrow extraction points + 1 distress screen, always with manual fallback</li>
+        <li>Calendar OAuth and Telegram bot explicitly scoped OUT — narrow build, stated honestly as roadmap</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Presentation</h3><span class="weight">15%</span></div>
+      <ul>
+        <li>Amir scenario used consistently across every diagram/demo — no invented numbers on the fly</li>
+        <li>REAL / MOCKED / ROADMAP tags on every feature — sets honest expectations before judges ask</li>
+        <li>Live demo beat: morning check-in (43) → recheck-in after rest (58) — "rest, then come back" story</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Design</h3><span class="weight">10%</span></div>
+      <ul>
+        <li>Single mint-green accent, no color-coded chaos — urgency shown via shade, not new hues</li>
+        <li>No emoji anywhere — custom SVG icon set only, addresses "too text-heavy" mentor feedback directly</li>
+        <li>Low text density enforced across all 14 screens (design.md)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card wide">
+    <div class="card-head"><h3>Mentor Consultation</h3><span class="weight">7%</span></div>
+    <ul>
+      <li><b>Faris Imran</b> (Sofea-led) → sparked Mirror Pet, ruled out streaks</li>
+      <li><b>Varsha</b> (Nureen-led) → sparked journal reframe, strict LLM boundary, crisis banner, Telegram roadmap idea</li>
+      <li style="color:#B23A3A;">⚠️ Only 2 of 4 planned sessions completed (Am's and Adib's did not happen) — documented honestly in README rather than fabricated</li>
+    </ul>
+  </div>
+
+  <footer>Use this to sanity-check the pitch deck outline before finalizing slides — every rubric line should have a visible answer in the demo, not just in this doc.</footer>
+</div>
+</body>
+</html>

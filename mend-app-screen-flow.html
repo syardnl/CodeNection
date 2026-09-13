@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEND — App Screen Flow</title>
+<style>
+  :root{
+    --bg:#F7FAF8; --panel:#FFFFFF; --ink:#1C2723; --ink-soft:#5B6B64;
+    --line:#D7E3DC; --accent:#2F6F6B; --accent-soft:#E4F1EE;
+    --real:#2F6F6B; --mocked:#8A7BAE; --roadmap:#9AA5A0;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',Helvetica,Arial,sans-serif;padding:40px 24px 80px;}
+  .wrap{max-width:1200px;margin:0 auto;}
+  h1{font-size:26px;margin:0 0 6px;}
+  .sub{color:var(--ink-soft);font-size:14px;max-width:680px;line-height:1.5;margin-bottom:10px;}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 34px;font-size:12px;font-family:'Consolas',monospace;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;color:var(--ink-soft);}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+
+  .stage{margin-bottom:38px;}
+  .stage-title{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:14px;}
+  .flow{display:flex;gap:14px;flex-wrap:wrap;align-items:stretch;}
+  .screen{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:14px 15px;width:200px;position:relative;
+  }
+  .screen h4{margin:0 0 6px;font-size:13px;}
+  .screen p{margin:0;font-size:11.5px;color:var(--ink-soft);line-height:1.5;}
+  .num{font-family:'Consolas',monospace;font-size:10px;color:var(--ink-soft);}
+  .tag{
+    display:inline-block;font-family:'Consolas',monospace;font-size:9px;
+    padding:2px 6px;border-radius:3px;margin-top:8px;color:#fff;
+  }
+  .tag.real{background:var(--real);}
+  .tag.mocked{background:var(--mocked);}
+  .tag.roadmap{background:var(--roadmap);}
+  .connector{align-self:center;color:var(--ink-soft);font-size:18px;}
+
+  footer{margin-top:20px;font-size:11.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>MEND — App Screen Flow</h1>
+  <div class="sub">Full flow from first open to core loop. Zero-data / first-time-user state throughout — the seeded Amir scenario is a separate demo walkthrough, not the default product state.</div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--real)"></span>REAL — built and functional</span>
+    <span><span class="dot" style="background:var(--mocked)"></span>MOCKED — seeded/simulated data</span>
+    <span><span class="dot" style="background:var(--roadmap)"></span>ROADMAP — pitched, not built</span>
+  </div>
+
+  <div class="stage">
+    <div class="stage-title">1. Entry</div>
+    <div class="flow">
+      <div class="screen"><span class="num">01</span><h4>Sign In</h4><p>Mascot-led welcome, email/password.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">02</span><h4>Sign Up</h4><p>Name, email, password — single screen.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">03</span><h4>Onboarding</h4><p>"When things pile up, what usually happens to you?" — 5-option behavior pattern.</p><span class="tag real">REAL</span></div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-title">2. First-Time Setup (Empty States)</div>
+    <div class="flow">
+      <div class="screen"><span class="num">04</span><h4>Home (Hub)</h4><p>Empty state — no capacity data yet, prompts first check-in.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">07</span><h4>Calendar / Timetable</h4><p>Empty — manual grid or photo/PDF upload (Gemini-extracted).</p><span class="tag mocked">MOCKED calendar</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">08</span><h4>Tasks</h4><p>Empty — manual entry or quick-add natural language (Gemini-extracted).</p><span class="tag real">REAL</span></div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-title">3. Daily Core Loop</div>
+    <div class="flow">
+      <div class="screen"><span class="num">05</span><h4>Check-in</h4><p>"What are we feeling today?" — SVG icon states or free-text (Gemini-extracted), confirm before use.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">14</span><h4>Crisis Banner</h4><p>Overlay if distress detected — hardcoded helplines, not LLM-judgment-based.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">06</span><h4>Capacity Assessment</h4><p>Radial score, mascot expression matches result.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">09</span><h4>Day Plan</h4><p>Timeline with protected recovery blocks. "Recheck-in" button available anytime.</p><span class="tag real">REAL</span></div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-title">4. Decisions & Reflection</div>
+    <div class="flow">
+      <div class="screen"><span class="num">10</span><h4>Adjustments</h4><p>Accept / Adjust / Keep Anyway on every recommendation — nothing auto-applies.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">11</span><h4>Burnout Debt</h4><p>Multi-day trend, not just today's score.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">12</span><h4>Future You</h4><p>Follow MEND vs Push Through — side by side, no verdict imposed.</p><span class="tag real">REAL</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><span class="num">13</span><h4>Calendar Retrospective</h4><p>Mood-over-time — mascot-face per day instead of a color dot.</p><span class="tag real">REAL (simple)</span></div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-title">5. The Mirror Pet — Threaded Throughout</div>
+    <div class="flow">
+      <div class="screen" style="width:100%;background:var(--accent-soft);border-color:var(--accent);">
+        <h4>Mascot on Home, Day Plan, Future You, Calendar</h4>
+        <p>Not a separate screen — the mascot's expression updates wherever it appears, based on live capacity/burnout data. No feed/water/care actions. This is MEND's answer to "what's your USP" — visible on every core screen, not tucked away.</p>
+        <span class="tag real">REAL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-title">6. Next Round (Not Built This Prototype)</div>
+    <div class="flow">
+      <div class="screen"><h4>Telegram Bot</h4><p>Forward class-group messages → bot → auto-extracted into schedule.</p><span class="tag roadmap">ROADMAP</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><h4>Full Pattern Learning</h4><p>App adapts beyond the one real exception (task-duration calibration).</p><span class="tag roadmap">ROADMAP</span></div>
+      <div class="connector">→</div>
+      <div class="screen"><h4>Calendar OAuth</h4><p>Live sync instead of mocked/manual/photo entry.</p><span class="tag roadmap">ROADMAP</span></div>
+    </div>
+  </div>
+
+  <footer>Source: design.md + Ground Truth v1 + mentor session outcomes. Task Debt Bank explicitly dropped from this flow per team decision.</footer>
+</div>
+</body>
+</html>
